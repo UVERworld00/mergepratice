@@ -8,16 +8,18 @@ trace1.y = [];
 trace1.x[0] = "新北市";
 trace1.x[1] = "台北市";
 trace1.x[2] = "桃園市";
+trace1.x[3] = "台中市";
 trace1.y[0] = data_marriage.result.records[1].average_age;
 trace1.y[1] = data_marriage.result.records[3].average_age;
 trace1.y[2] = data_marriage.result.records[5].average_age;
+trace1.y[3] = data_marriage.result.records[7].average_age;
 trace1.text = trace1.y;
 trace1.textfont = {
-    color:'yellow',
-    size:20
+    color:'black',
+    size:18
 };
 trace1.marker = {
-    color:'blue'
+    color:'yellow'
 };
 
 let trace2 = {};
@@ -28,16 +30,19 @@ trace2.y = [];
 trace2.x[0] = "新北市";
 trace2.x[1] = "台北市";
 trace2.x[2] = "桃園市";
+trace2.x[3] = "台中市";
+trace1.text = trace1.y;
 trace2.y[0] = data_marriage.result.records[2].average_age;
 trace2.y[1] = data_marriage.result.records[4].average_age;
 trace2.y[2] = data_marriage.result.records[6].average_age;
+trace2.y[3] = data_marriage.result.records[8].average_age;
 trace2.text = trace2.y;
 trace2.textfont = {
     color: 'yellow',
-    size: 20
+    size: 18
 };
 trace2.marker = {
-    color: 'red'
+    color: 'green'
 };
 
 // let trace2 = {};
@@ -89,7 +94,7 @@ let layout = {
         t: 50
     },
     barmode:'stack',
-    title:'各縣市初婚年齡平均'
+    title:'各縣市結婚年齡平均'
 };
 
 Plotly.newPlot(myGraph,data,layout);

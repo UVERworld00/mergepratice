@@ -66,11 +66,32 @@ function drawPieChart(res){
         }
     }
 
+    let trace4 = {};
+    trace4.type = "pie";
+    trace4.title = "船艙等級比例";
+    trace4.labels = ['1','2','3'];
+    trace4.values = [0, 0, 0];
+    trace4.domain = {
+        row: 1,
+        column: 1
+    };
+    trace4.hole = 0.5;
+
+    for (let x = 0; x < res.length; x++) {
+        if (res[x]['Pclass'] == '1') {
+            trace4.values[0] += 1;
+        } else if (res[x]['Pclass'] == '2') {
+            trace4.values[1] += 1;
+        } else if (res[x]['Pclass'] == '3') {
+            trace4.values[2] += 1;
+        }
+    }
+
     let data = [];
     data.push(trace1);
     data.push(trace2);
     data.push(trace3);
-    // data.push(trace4);
+    data.push(trace4);
 
     let layout = {
         margin: {
@@ -81,7 +102,7 @@ function drawPieChart(res){
             rows: 2,
             columns: 2
         },
-        title:"Titanic 數據比例圖"
+        title:"數據比例圖"
     };
 
     Plotly.newPlot(myGraph, data, layout);

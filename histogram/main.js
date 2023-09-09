@@ -18,23 +18,23 @@ function drawHistogram(res){
     trace1.xbins = {
         size:10,
         start:0,
-        end:100
+        end:120
     };
-    trace1.opacity = 0.5;
+    trace1.opacity = 0.6;
     trace1.marker = {
-        color: 'green'
+        color: 'blue'
     };
-    // trace1.y = set1;
+    //trace1.y = set1;
 
     let data = [];
     data.push(trace1);
 
     let layout = {
         margin: {
-            t: 100
+            t: 80
         },
-        title: 'Titanic 年齡分布',
-        // barmode: 'overlay'
+        title: '年齡分布',
+         //barmode: 'overlay'
     };
 
     Plotly.newPlot(myGraph, data, layout);

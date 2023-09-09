@@ -20,7 +20,7 @@ function getCSV_Data(rows){
     trace1.autocolorscale = true;
 
     trace1.locations.push('Taiwan');
-    trace1.z.push(15);
+    trace1.z.push(11);
     trace1.text.push('台灣');
 
     let data = [];
@@ -29,7 +29,7 @@ function getCSV_Data(rows){
 
     let layout = {
         margin: {
-            t: 50,
+            t: 100,
             l: 0
         },
         geo:{
@@ -37,7 +37,7 @@ function getCSV_Data(rows){
                 type:'robinson'
             }
         },
-        title:"2010年各國成人純酒精消耗量"
+        title:"2015年各國變化量"
     };
 
     Plotly.newPlot(myGraph, data, layout);

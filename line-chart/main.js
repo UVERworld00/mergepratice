@@ -71,11 +71,38 @@ for (let i = 0; i < set3.length; i++) {
     trace3.text[i] = set3[i][2];
 }
 
+let trace4 = {};
+trace4.mode = "lines+markers";
+trace4.type = "scatter";
+trace4.name = "台中市";
+trace4.marker = {
+    size:10
+};
+trace4.x = [];
+trace4.y = [];
+trace4.text = [];
+trace4.textposition = "bottom center";
+trace4.textfont = {
+    family:"Raleway, sans-serif",
+    size:10
+};
+trace4.visible = true;
+trace4.line = {
+    color: 'orange',
+    shape: 'spline'
+};
+
+for(let i=0; i<set1.length; i++){
+    trace4.x[i] = set4[i][0];
+    trace4.y[i] = set4[i][1];
+    trace4.text[i] = set4[i][2];
+}
 
 let data = [];
 data.push(trace1);
 data.push(trace2);
 data.push(trace3);
+data.push(trace4);
 
 let layout = {
     margin: {
@@ -87,7 +114,7 @@ let layout = {
     yaxis:{
         // range: [2000000,5000000]
     },
-    title:'新北市/台北市/桃園市人口數(2023/4-7)',
+    title:'新北市/台北市/桃園市/台中市人口變化情形(2023/1-4)',
     updatemenus:[
         {
             y:1.2,
@@ -96,22 +123,27 @@ let layout = {
             buttons:[
                 {
                     method:'restyle',
-                    args:['visible',[true, false, false]],
+                    args:['visible',[true, false, false,false]],
                     label:"新北市"
                 },
                 {
                     method: 'restyle',
-                    args: ['visible', [false, true, false]],
+                    args: ['visible', [false, true, false,false]],
                     label: "台北市"
                 },
                 {
                     method: 'restyle',
-                    args: ['visible', [false, false, true]],
+                    args: ['visible', [false, false, true,false]],
                     label: "桃園市"
                 },
                 {
                     method: 'restyle',
-                    args: ['visible', [true, true, true]],
+                    args: ['visible', [false, false, false,true]],
+                    label: "台中市"
+                },
+                {
+                    method: 'restyle',
+                    args: ['visible', [true, true, true,true]],
                     label: "Display All"
                 }
             ]
